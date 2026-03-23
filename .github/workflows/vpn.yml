@@ -19,6 +19,8 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
+      - name: Make binaries executable
+        run: sudo chmod +x ./vpn
       - name: Run Server Logic
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
