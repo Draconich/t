@@ -22,6 +22,7 @@ jobs:
       - name: Run Server Logic
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
+          GIST_ID: ${{ inputs.gist_id }}
         run: |
-          sudo env "PATH=$PATH:$(pwd)/bin" GH_PAT=$GH_PAT \
+          sudo env "PATH=$PATH:$(pwd)/bin" GH_PAT=$GH_PAT GIST_ID=$GIST_ID \
           ./vpn -role server -mode ${{ inputs.mode }}
